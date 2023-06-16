@@ -1,21 +1,23 @@
 <%= render @post %>
 
-<p class="fs-3">Comments: </p>
+<div class="d-block text-center mt-3 fs-3 mb-3"><%= @post.leyenda %></div>
+
 <% if @post.comments.any? %>
   <%= render @post.comments %>
 <% else %>      
     <p class="fw-bold">No comments yet. Be the first!</p>
 <% end %>
-<% if user_signed_in? %>
-  <h2>Add a comment:</h2>
+<% if user_signed_in? %> 
   <%= render 'comments/form' %>
+    <% if current_user.role == "admin" %>
+      <div class="d-flex justify-content-center">
+        <%= link_to "Edit this post", edit_post_path(@post), class:"btn btn-success my-3" %>
+        <%= button_to "Destroy this post", @post, method: :delete, class:"opcionButton" %>
+      </div>
+    <% end %>
 <% else %>  
     <%= link_to "Sign in to share your thoughts!", new_user_session_path, class:"btn btn-info my-3" %> 
 <% end %>
+<br>
+<%= link_to "Back to posts", posts_path, class:"btn btn-secondary mb-3" %>
 
-<div>
-  <%= link_to "Edit this post", edit_post_path(@post) %> |
-  <%= link_to "Back to posts", posts_path %>
-
-  <%= button_to "Destroy this post", @post, method: :delete %>
-</div>

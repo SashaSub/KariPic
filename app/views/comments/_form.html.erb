@@ -13,9 +13,9 @@
 
   <%= form.hidden_field :post_id, value: @post.id %>
   <div class = 'field'>
-      <%= form.label :"Leave a comment: ", style: "display: block" %>
-        <%= form.text_field :content %>
-        <%= form.submit %>    
+      <%= form.label :"Leave a comment: ", class:"fw-bold" %>
+      <%= form.text_field :content %>
+      <%= form.submit %>    
   </div>
   
 <% end %>

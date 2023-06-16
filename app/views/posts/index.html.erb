@@ -1,12 +1,13 @@
-<h1>Posts</h1>
+<h1 class="d-flex justify-content-center fst-italic py-4" style="color: #665D1E">Kari photography</h1>
+
+<p class="d-flex justify-content-end">*Click the photo for details</p>
 
 <div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
-  <% end %>
+  <div class="row">
+    <% @posts.each do |post| %>
+      <div class="col-6"> 
+        <%= render post %>               
+      </div>
+    <% end %>
+  </div>
 </div>
-
-<%= link_to "New post", new_post_path %>

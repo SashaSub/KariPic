@@ -26,7 +26,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user = current_user
-    @post.images.attach(params[:post][:images])
+    #@post.images.attach(params[:post][:images])
       respond_to do |format|
         if @post.save
           format.html { redirect_to post_url(@post), notice: "Post was successfully created." }

@@ -7,10 +7,10 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :posts       
   has_many :images, as: :imageable
-  #has_one_attached :image #, as: :imageable
+  #has_one_attached :image, as: :imageable
   accepts_nested_attributes_for :images
 
-  validates :images, presence: true
+  #validates :images, presence: true
   enum :role, [:normal_user, :admin]
 
 end
