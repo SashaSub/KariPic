@@ -1,9 +1,10 @@
 <div id="<%= dom_id comment %>">
 
-  <p> 
+  <p>   
     <span class="owner-avatar">
       <%= image_tag comment.user.images[0].url, class:'rounded-circle' %>
-    </span>       
+    </span>  
+   
     <span class="fw-bold"><%= comment.user.name %></span>:
     <%= comment.content %>
   </p> 

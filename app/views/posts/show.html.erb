@@ -7,7 +7,7 @@
 <% else %>      
     <p class="fw-bold">No comments yet. Be the first!</p>
 <% end %>
-<% if user_signed_in? %> 
+<% if user_signed_in? && current_user.images[0] != nil %> 
   <%= render 'comments/form' %>
     <% if current_user.role == "admin" %>
       <div class="d-flex justify-content-center">
@@ -16,7 +16,7 @@
       </div>
     <% end %>
 <% else %>  
-    <%= link_to "Sign in to share your thoughts!", new_user_session_path, class:"btn btn-info my-3" %> 
+    <%= link_to "You must be Sign in and have a profile picture to share your thoughts!", new_user_session_path, class:"btn btn-info my-3" %> 
 <% end %>
 <br>
 <%= link_to "Back to posts", posts_path, class:"btn btn-secondary mb-3" %>
