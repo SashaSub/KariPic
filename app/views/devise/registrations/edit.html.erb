@@ -8,13 +8,13 @@
     <%= f.label :name %><br />
     <%= f.text_field :name, autocomplete: "name" %>
   </div>
-  
+
   <%= f.fields_for :images do |image_form| %>
       <div class="field">
         <%= image_form.label :url, "Agrega tu imagen de perfil" %><br />
         <%= image_form.text_field :url %>
       </div>
-    <% end %>
+  <% end %>
 
   <div class="field">
     <%= f.label :email %><br />
