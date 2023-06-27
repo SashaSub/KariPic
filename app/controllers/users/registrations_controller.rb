@@ -17,13 +17,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/edit
   def edit
-    super
+    super do |resource|
+      resource.images.build
+    end
   end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    super do |resource|
+      resource.images.build
+    end
+  end
 
   # DELETE /resource
   # def destroy
