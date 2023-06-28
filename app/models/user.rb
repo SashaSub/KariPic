@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :comments, dependent: :destroy
-  has_many :posts, dependent: :destroy
+  has_many :posts
   has_many :images, as: :imageable
   #has_one_attached :image, as: :imageable
   accepts_nested_attributes_for :images
